@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink-950: #06110f;
+  --color-ink-900: #0b1f1a;
+  --color-ink-800: #123029;
+  --color-ink-700: #1d4a3f;
+  --color-ink-500: #46685e;
+  --color-ink-400: #6b8a80;
+
+  --color-brand-50: #edfbf5;
+  --color-brand-100: #d3f5e6;
+  --color-brand-200: #a9ead0;
+  --color-brand-300: #71d8b3;
+  --color-brand-400: #3ebd94;
+  --color-brand-500: #17a077;
+  --color-brand-600: #0b8161;
+  --color-brand-700: #0a674f;
+  --color-brand-800: #0b5241;
+  --color-brand-900: #0a4436;
+
+  --color-sun-50: #fff8eb;
+  --color-sun-100: #fdefc8;
+  --color-sun-200: #fbdd8c;
+  --color-sun-300: #f8c451;
+  --color-sun-400: #f6ad28;
+  --color-sun-500: #ef8c0c;
+  --color-sun-600: #d36907;
+  --color-sun-700: #af4b0a;
+
+  --color-sand-50: #fdfbf7;
+  --color-sand-100: #f8f4ec;
+  --color-sand-200: #efe7d9;
+  --color-sand-300: #e2d5c0;
+
+  --font-sans: var(--font-sans-stack);
+  --font-display: var(--font-display-stack);
+}
+
+:root {
+  --font-sans-stack: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-display-stack: "Georgia", "Iowan Old Style", "Times New Roman", serif;
+  color-scheme: light;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--color-sand-50);
+    color: var(--color-ink-900);
+    font-family: var(--font-sans-stack);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-brand-200);
+    color: var(--color-ink-900);
+  }
+
+  /* Focus ring that is visible on both light and dark surfaces */
+  :where(a, button, input, select, summary, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-sun-400);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* ---------- Article typography ---------- */
+  .prose-pcm { max-width: 72ch; }
+  .prose-pcm h2 {
+    font-size: clamp(1.5rem, 1.15rem + 1.5vw, 2.1rem);
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-top: 2.75rem;
+    margin-bottom: 0.9rem;
+    color: var(--color-ink-900);
+    scroll-margin-top: 6rem;
+  }
+  .prose-pcm h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 0.6rem;
+    color: var(--color-ink-800);
+  }
+  :where(.prose-pcm p) {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    margin-bottom: 1.1rem;
+    color: #29433c;
+  }
+  :where(.prose-pcm ul, ul.prose-pcm, ol.prose-pcm) {
+    margin: 0 0 1.4rem;
+    padding: 0;
+    list-style: none;
+  }
+  :where(.prose-pcm ul li, ul.prose-pcm > li, ol.prose-pcm > li) {
+    position: relative;
+    padding-left: 1.75rem;
+    margin-bottom: 0.85rem;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: #29433c;
+  }
+  :where(.prose-pcm ul li, ul.prose-pcm > li, ol.prose-pcm > li)::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6rem;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 2px;
+    background: var(--color-brand-400);
+    transform: rotate(45deg);
+  }
+  .prose-pcm strong { color: var(--color-ink-900); font-weight: 650; }
+  .prose-pcm a {
+    color: var(--color-brand-700);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+    font-weight: 500;
+  }
+  .prose-pcm a:hover { color: var(--color-brand-500); }
+
+  /* ---------- Utilities ---------- */
+  .shadow-card { box-shadow: 0 1px 2px rgba(6, 17, 15, 0.04), 0 8px 24px -12px rgba(6, 17, 15, 0.18); }
+  .shadow-lift { box-shadow: 0 2px 4px rgba(6, 17, 15, 0.05), 0 18px 40px -18px rgba(6, 17, 15, 0.32); }
+
+  .grain {
+    background-image:
+      radial-gradient(circle at 15% 12%, rgba(62, 189, 148, 0.18), transparent 45%),
+      radial-gradient(circle at 88% 8%, rgba(246, 173, 40, 0.16), transparent 42%),
+      radial-gradient(circle at 55% 95%, rgba(23, 160, 119, 0.12), transparent 55%);
+  }
+
+  @keyframes pcm-fade-up {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: none; }
+  }
+  .animate-fade-up { animation: pcm-fade-up 0.45s ease-out both; }
+
+  /* Hide number input spinners inside the search bar */
+  input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
+}
