@@ -5,7 +5,7 @@ import { SITE } from "@/lib/site";
 import { PhoneIcon, MenuIcon, CloseIcon, PinIcon } from "./Icons";
 
 const NAV = [
-  { href: "#price-finder", label: "Price Finder" },
+  { href: "#price-finder", label: "Price List" },
   { href: "#cost-factors", label: "Cost Factors" },
   { href: "#specialty", label: "Specialty Pests" },
   { href: "#plans", label: "Plans" },
@@ -103,7 +103,7 @@ export default function Header() {
               href="#price-finder"
               className="hidden rounded-xl border border-brand-600/25 bg-white px-4 py-2.5 text-sm font-bold text-brand-700 transition hover:border-brand-600/50 hover:bg-brand-50 xl:inline-flex"
             >
-              Find my price
+              See prices
             </a>
             <button
               type="button"

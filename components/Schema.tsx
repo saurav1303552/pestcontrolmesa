@@ -95,14 +95,6 @@ export default function Schema() {
     name: SITE.name,
     publisher: { "@id": BUSINESS_ID },
     inLanguage: "en-US",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${SITE.url}/?service={search_term_string}#price-finder`,
-      },
-      "query-input": "required name=search_term_string",
-    },
   };
 
   const webPage = {

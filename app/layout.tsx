@@ -121,7 +121,7 @@ export default function RootLayout({
           href="#price-finder"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:bg-ink-900 focus:px-5 focus:py-3 focus:text-sm focus:font-bold focus:text-white"
         >
-          Skip to the price finder
+          Skip to the price list
         </a>
         {children}
       </body>

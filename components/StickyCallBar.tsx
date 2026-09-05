@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { SITE } from "@/lib/site";
-import { PhoneIcon, SearchIcon } from "./Icons";
+import { PhoneIcon, TagIcon } from "./Icons";
 
 export default function StickyCallBar() {
   const [show, setShow] = useState(false);
@@ -33,8 +33,8 @@ export default function StickyCallBar() {
           href="#price-finder"
           className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/10 px-4 py-3.5 text-[15px] font-bold whitespace-nowrap text-white"
         >
-          <SearchIcon className="h-5 w-5" />
-          Find price
+          <TagIcon className="h-5 w-5" />
+          See prices
         </a>
       </div>
     </div>

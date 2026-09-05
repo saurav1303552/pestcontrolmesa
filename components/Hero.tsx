@@ -4,7 +4,7 @@ import {
   PhoneIcon,
   PinIcon,
   ClockIcon,
-  SearchIcon,
+  TagIcon,
   StarIcon,
   ShieldIcon,
   CheckIcon,
@@ -44,9 +44,10 @@ export default function Hero() {
 
             <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-brand-100/85 sm:text-lg">
               Straight answers on what pest control actually costs in Mesa —
-              broken down by service type, pest type and frequency. Search{" "}
-              <strong className="font-bold text-white">{PRICES.length} priced services</strong>{" "}
-              below and see a realistic number before you ever pick up the phone.
+              broken down by service type, pest type and frequency.{" "}
+              <strong className="font-bold text-white">{PRICES.length} services</strong>{" "}
+              are priced in full below, so you see a realistic number before you
+              ever pick up the phone.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -61,8 +62,8 @@ export default function Hero() {
                 href="#price-finder"
                 className="inline-flex items-center justify-center gap-2.5 rounded-xl border border-white/25 bg-white/10 px-6 py-4 text-base font-bold text-white backdrop-blur transition hover:bg-white/20"
               >
-                <SearchIcon className="h-5 w-5" />
-                Search prices by service
+                <TagIcon className="h-5 w-5" />
+                See the full price list
               </a>
             </div>
 

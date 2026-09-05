@@ -14,7 +14,7 @@ export default function NotFound() {
           That page isn&apos;t here — but the prices are.
         </h1>
         <p className="mx-auto mt-4 max-w-md text-[17px] leading-relaxed text-brand-100/80">
-          Head back to the Mesa, AZ pest control price list and search the
+          Head back to the Mesa, AZ pest control price list and find the
           service you need.
         </p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">

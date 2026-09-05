@@ -5,7 +5,11 @@ export type PriceRow = {
   price: string;
   /** Category slug */
   category: string;
-  /** Extra search terms shoppers actually type */
+  /**
+   * Alternative names shoppers use for this service. The on-page search was
+   * removed, so nothing renders these today — they are kept as the vocabulary
+   * for a future search or for paid-search keyword work.
+   */
   aliases?: string[];
 };
 
@@ -457,7 +461,10 @@ export const PRICES: PriceRow[] = [
   { service: "Annual pest protection plan", price: "$500–$1,200/year", category: "warranty", aliases: ["yearly plan", "protection plan"] },
 ];
 
-/** Words shoppers type that should map onto the service vocabulary. */
+/**
+ * Words shoppers type that map onto the service vocabulary. Unused since the
+ * on-page search was removed; retained alongside `aliases` above.
+ */
 export const SYNONYMS: Record<string, string[]> = {
   roach: ["cockroach"],
   roaches: ["cockroach"],

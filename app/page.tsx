@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import PriceSearch from "@/components/PriceSearch";
+import PriceTable from "@/components/PriceTable";
 import Article from "@/components/Article";
 import Faq from "@/components/Faq";
 import QuoteCta from "@/components/QuoteCta";
@@ -15,7 +15,7 @@ export default function HomePage() {
       <Header />
       <main>
         <Hero />
-        <PriceSearch />
+        <PriceTable />
         <Article />
         <Faq />
         <QuoteCta />
