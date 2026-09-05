@@ -1,4 +1,6 @@
 import { SITE } from "@/lib/site";
+import { PHOTOS } from "@/lib/images";
+import SectionPhoto from "./SectionPhoto";
 import {
   PhoneIcon,
   HouseIcon,
@@ -229,6 +231,12 @@ export default function Article() {
             </p>
           </div>
 
+          <SectionPhoto
+            photo={PHOTOS.exteriorTreatment}
+            className="mt-9"
+            sizes="(min-width: 1280px) 1152px, 100vw"
+          />
+
           <ul className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <FactorCard
               icon={<HouseIcon className="h-5.5 w-5.5" />}
@@ -341,6 +349,12 @@ export default function Article() {
               these specialty jobs carry their own pricing:
             </p>
           </div>
+
+          <SectionPhoto
+            photo={PHOTOS.scorpionInspection}
+            className="mt-9"
+            sizes="(min-width: 1280px) 1152px, 100vw"
+          />
 
           <div className="mt-9 grid gap-4 md:grid-cols-2">
             {[
@@ -548,6 +562,12 @@ export default function Article() {
                   </div>
                 </dl>
               </div>
+
+              <SectionPhoto
+                photo={PHOTOS.entryPointInspection}
+                className="mt-6"
+                sizes="(min-width: 1024px) 480px, 100vw"
+              />
             </div>
 
             <ul className="prose-pcm lg:pt-14">

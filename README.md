@@ -30,6 +30,7 @@ npm run start    # serve the production build
 | `lib/pricing.ts` | The 254 price rows, 22 categories and search synonyms |
 | `components/PriceSearch.tsx` | The search widget and price table |
 | `components/Schema.tsx` | JSON-LD graph (LocalBusiness, WebSite, WebPage, Breadcrumb, FAQPage) |
+| `lib/images.ts` | The three photo slots — see `public/images/README.md` |
 
 ## The price finder
 
@@ -57,6 +58,15 @@ All pricing lives in `PRICES` in `lib/pricing.ts`. Each row is:
 `CATEGORIES` in the same file; adding a row to a new category requires adding that category first.
 The JSON-LD offer catalog and the "N services priced" counters derive from this array, so no other
 file needs touching.
+
+## Photography
+
+Three photo slots are declared in `lib/images.ts` and rendered by
+`components/SectionPhoto.tsx`. Each slot renders **nothing** while its `src` is
+`null`, so an unfilled slot leaves the layout untouched and a missing file can
+never ship as a broken image. Alt text is already written for partial-match
+keyword relevance. `public/images/README.md` lists the filename, aspect ratio
+and subject matter each slot expects.
 
 ## Business details
 
