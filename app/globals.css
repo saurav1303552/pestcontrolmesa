@@ -34,17 +34,22 @@
   --color-sand-300: #e2d5c0;
 
   --font-sans: var(--font-sans-stack);
-  --font-display: var(--font-display-stack);
+  --font-display: var(--font-sans-stack);
 }
 
 :root {
-  --font-sans-stack: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
-  --font-display-stack: "Georgia", "Iowan Old Style", "Times New Roman", serif;
+  /* --font-poppins is injected by next/font in app/layout.tsx and already
+     carries its own metric-adjusted fallbacks. */
+  --font-sans-stack: var(--font-poppins), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color-scheme: light;
 }
 
 @layer base {
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 5.5rem;
@@ -83,12 +88,12 @@
 
 @layer components {
   /* ---------- Article typography ---------- */
-  .prose-pcm { max-width: 72ch; }
+  .prose-pcm { max-width: 64ch; }
   .prose-pcm h2 {
     font-size: clamp(1.5rem, 1.15rem + 1.5vw, 2.1rem);
-    line-height: 1.2;
+    line-height: 1.18;
     font-weight: 700;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
     margin-top: 2.75rem;
     margin-bottom: 0.9rem;
     color: var(--color-ink-900);
@@ -96,14 +101,15 @@
   }
   .prose-pcm h3 {
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: 600;
+    letter-spacing: -0.015em;
     margin-top: 2rem;
     margin-bottom: 0.6rem;
     color: var(--color-ink-800);
   }
   :where(.prose-pcm p) {
-    font-size: 1.0625rem;
-    line-height: 1.75;
+    font-size: 1.03125rem;
+    line-height: 1.72;
     margin-bottom: 1.1rem;
     color: #29433c;
   }
@@ -116,8 +122,8 @@
     position: relative;
     padding-left: 1.75rem;
     margin-bottom: 0.85rem;
-    font-size: 1.0625rem;
-    line-height: 1.7;
+    font-size: 1.03125rem;
+    line-height: 1.68;
     color: #29433c;
   }
   :where(.prose-pcm ul li, ul.prose-pcm > li, ol.prose-pcm > li)::before {
@@ -131,7 +137,7 @@
     background: var(--color-brand-400);
     transform: rotate(45deg);
   }
-  .prose-pcm strong { color: var(--color-ink-900); font-weight: 650; }
+  .prose-pcm strong { color: var(--color-ink-900); font-weight: 600; }
   .prose-pcm a {
     color: var(--color-brand-700);
     text-decoration: underline;

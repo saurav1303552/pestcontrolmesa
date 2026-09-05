@@ -1,6 +1,29 @@
 import type { Metadata, Viewport } from "next";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import { SITE } from "@/lib/site";
+
+/**
+ * Self-hosted at build time by next/font, so there is no runtime request to
+ * Google and no flash of unstyled text. `display: swap` plus the adjusted
+ * fallback metrics keep CLS at zero while the face loads.
+ */
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-poppins",
+  fallback: [
+    "ui-sans-serif",
+    "system-ui",
+    "-apple-system",
+    "Segoe UI",
+    "Roboto",
+    "Helvetica Neue",
+    "Arial",
+    "sans-serif",
+  ],
+});
 
 const TITLE =
   "Pest Control Mesa AZ Prices: Termite Control, Bed Bugs & Scorpion Costs";
@@ -89,7 +112,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-US">
+    <html lang="en-US" className={poppins.variable}>
       <head>
         <link rel="preconnect" href="https://www.google.com" />
       </head>
