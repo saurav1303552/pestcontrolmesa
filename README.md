@@ -13,9 +13,9 @@ searchable price table of 254 pest control services in Mesa, Arizona.
 
 ```bash
 npm install
-npm run dev      # http://localhost:3000
-npm run build    # static prerender
-npm run start    # serve the production build
+npm run dev       # http://localhost:3000
+npm run build     # static export -> ./out
+npm run preview   # serve ./out locally
 ```
 
 ## Project layout
@@ -28,23 +28,20 @@ npm run start    # serve the production build
 | `app/sitemap.ts`, `app/robots.ts`, `app/manifest.ts` | Generated `/sitemap.xml`, `/robots.txt`, `/manifest.webmanifest` |
 | `lib/site.ts` | Single source of truth for NAP, hours, geo and service areas |
 | `lib/pricing.ts` | The 254 price rows, 22 categories and search synonyms |
-| `components/PriceSearch.tsx` | The search widget and price table |
+| `components/PriceTable.tsx` | The grouped price table |
 | `components/Schema.tsx` | JSON-LD graph (LocalBusiness, WebSite, WebPage, Breadcrumb, FAQPage) |
 | `lib/images.ts` | The three photo slots — see `public/images/README.md` |
 
-## The price finder
+## The price table
 
-`components/PriceSearch.tsx` renders every one of the 254 rows into the server HTML, so the
-full price list is crawlable whether or not JavaScript runs. On top of that it adds:
+`components/PriceTable.tsx` is a server component — it ships no JavaScript. All 254 rows render
+into the HTML grouped under their 22 categories, so the whole price list is crawlable and readable
+with scripting off. A "jump to a category" nav sits above the table.
 
-- a large search field that asks *"What service are you looking for?"* and filters the table live
-- a typeahead listbox with full keyboard support (arrow keys, Enter, Escape)
-- quick-pick chips and a category select
-- token scoring with plural stripping, stop words and a synonym map, so `roaches in my kitchen`,
-  `how much for rats` and `termight` all resolve to the right rows
-- a mobile layout that swaps the table for compact cards, keeps the search bar pinned under the
-  header, collapses the chip rail once pinned, and scrolls to the results after a search
-- a no-results state that falls back to a call CTA
+Mobile and desktop render separate markup (stacked cards vs. a table), so each has its own anchor
+ids — `#m-prices-<slug>` and `#d-prices-<slug>`. Do not collapse them to one shared id: the
+browser resolves to the first match, which is the copy hidden at that breakpoint. Anchor offset
+comes from `scroll-padding-top` on `html`; adding `scroll-margin` to the targets stacks with it.
 
 ## Editing prices
 
@@ -67,6 +64,42 @@ Three photo slots are declared in `lib/images.ts` and rendered by
 never ship as a broken image. Alt text is already written for partial-match
 keyword relevance. `public/images/README.md` lists the filename, aspect ratio
 and subject matter each slot expects.
+
+## Deploying to Cloudflare Pages
+
+`next.config.mjs` sets `output: "export"`, so `npm run build` writes a plain static site to
+`./out` — no adapter, no `@cloudflare/next-on-pages`, no Workers runtime. The site has no API
+routes, dynamic routes or server actions, so nothing needs a server.
+
+**Connect the repo** at Cloudflare dashboard → Workers & Pages → Create → Pages → Connect to Git:
+
+| Setting | Value |
+| --- | --- |
+| Framework preset | Next.js (Static HTML Export) |
+| Build command | `npm run build` |
+| Build output directory | `out` |
+| Node version | `22` (set env var `NODE_VERSION=22`) |
+
+Or deploy from your machine without Git:
+
+```bash
+npm run build
+npx wrangler pages deploy out --project-name=pestcontrolmesaazprices
+```
+
+`public/_headers` is copied into the export and applies Cloudflare's cache and security headers —
+immutable caching for hashed assets, HSTS, and the usual `nosniff` / frame / referrer rules.
+
+**Custom domain**: Pages project → Custom domains → add `pestcontrolmesaazprices.com` and `www`.
+If the domain is on Cloudflare DNS, the records are created for you; otherwise point `CNAME www`
+at `<project>.pages.dev` and use a `CNAME`/ALIAS at the apex.
+
+Two caveats that come with a static export:
+
+- `next/image` optimization is off (`images.unoptimized`), so commit photos at the size they are
+  displayed. Enable Cloudflare Polish on the zone if you want edge re-encoding.
+- After deploying, update `SITE.url` in `lib/site.ts` if the canonical host ever changes — it feeds
+  the canonical tag, sitemap, robots and JSON-LD.
 
 ## Business details
 
