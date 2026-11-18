@@ -2,6 +2,8 @@ import { CATEGORIES, CATEGORY_NAMES, PRICES, type PriceRow } from "@/lib/pricing
 import { SITE } from "@/lib/site";
 import { PhoneIcon, TagIcon, CheckIcon } from "./Icons";
 import PriceDisclaimer from "./PriceDisclaimer";
+import SectionPhoto from "./SectionPhoto";
+import { PHOTOS } from "@/lib/images";
 
 /** Rows grouped into the order the categories are declared in. */
 const GROUPS: { slug: string; name: string; rows: PriceRow[] }[] = CATEGORIES.map(
@@ -58,6 +60,12 @@ export default function PriceTable() {
             picking up the phone.
           </p>
         </div>
+
+        <SectionPhoto
+          photo={PHOTOS.priceCard}
+          className="mt-9"
+          sizes="(min-width: 1280px) 1152px, 100vw"
+        />
 
         <PriceDisclaimer className="mt-9" />
 

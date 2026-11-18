@@ -39,6 +39,9 @@ export const PHOTOS: Record<string, SitePhoto> = {
     height: 900,
     caption:
       "Typical Mesa price ranges at a glance. The full table below breaks all 253 services down by pest and frequency.",
+    // Sits directly under the price-table H2, high enough to be the LCP
+    // element — load it eagerly rather than lazily.
+    priority: true,
   },
 
   /** Sits under the specialty-pest intro. Wants: bark scorpion or termite damage close-up. */

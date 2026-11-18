@@ -232,12 +232,6 @@ export default function Article() {
             </p>
           </div>
 
-          <SectionPhoto
-            photo={PHOTOS.priceCard}
-            className="mt-9"
-            sizes="(min-width: 1280px) 1152px, 100vw"
-          />
-
           <ul className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <FactorCard
               icon={<HouseIcon className="h-5.5 w-5.5" />}
