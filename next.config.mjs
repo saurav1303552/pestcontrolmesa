@@ -12,7 +12,7 @@ const nextConfig = {
     /**
      * The Next image optimizer needs a Node server, which a static export does
      * not have. Files in /public/images are served as-is, so size and compress
-     * them before committing (see public/images/README.md). Cloudflare Polish
+     * them before committing (see docs/images.md). Cloudflare Polish
      * can re-encode them at the edge if you enable it on the zone.
      */
     unoptimized: true,

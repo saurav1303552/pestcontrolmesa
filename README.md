@@ -30,7 +30,7 @@ npm run preview   # serve ./out locally
 | `lib/pricing.ts` | The 254 price rows, 22 categories and search synonyms |
 | `components/PriceTable.tsx` | The grouped price table |
 | `components/Schema.tsx` | JSON-LD graph (LocalBusiness, WebSite, WebPage, Breadcrumb, FAQPage) |
-| `lib/images.ts` | The three photo slots — see `public/images/README.md` |
+| `lib/images.ts` | The three photo slots — see `docs/images.md` |
 
 ## The price table
 
@@ -62,7 +62,7 @@ Three photo slots are declared in `lib/images.ts` and rendered by
 `components/SectionPhoto.tsx`. Each slot renders **nothing** while its `src` is
 `null`, so an unfilled slot leaves the layout untouched and a missing file can
 never ship as a broken image. Alt text is already written for partial-match
-keyword relevance. `public/images/README.md` lists the filename, aspect ratio
+keyword relevance. `docs/images.md` lists the filename, aspect ratio
 and subject matter each slot expects.
 
 ## Deploying to Cloudflare Pages

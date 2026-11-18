@@ -5,6 +5,8 @@
  * null the slot renders nothing at all — the page keeps its current layout, so
  * a missing asset can never ship as a broken image.
  *
+ * docs/images.md lists the filename, aspect ratio and subject each slot wants.
+ *
  * Alt text is written for partial-match relevance to the focus keyword
  * ("pest control mesa az prices") rather than exact-match stuffing: each one
  * describes what is actually in the frame and carries one or two of the
