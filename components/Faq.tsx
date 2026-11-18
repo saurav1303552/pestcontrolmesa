@@ -23,8 +23,8 @@ export const FAQS = [
     a: "Bed bug treatment runs $550 to $1,650, with $800–$1,200 being typical. Chemical treatment averages $320–$400 per room, while whole-home heat treatment ranges from $800 to $2,500. A K9 bed bug inspection costs $100–$300.",
   },
   {
-    q: "Do you offer free pest inspections in Mesa?",
-    a: "Yes. A standard pest inspection is free with a written estimate. Standalone inspections elsewhere typically cost $75–$150, and specialty inspections such as termite reports for a home sale run $75–$200.",
+    q: "What does a pest inspection cost in Mesa?",
+    a: "A standalone pest inspection in Mesa runs $0 to $150 depending on the company and the property. Specialty inspections cost more: a termite report for a home sale is $75 to $200, and a K9 bed bug inspection is $100 to $300. Ask what the inspection covers and whether its cost is credited toward treatment if you book.",
   },
   {
     q: "What affects my pest control quote the most?",

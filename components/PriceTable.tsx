@@ -196,7 +196,7 @@ export default function PriceTable() {
               </p>
               <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5 text-[13px] font-medium text-brand-200">
                 <li className="flex items-center gap-1.5">
-                  <CheckIcon className="h-4 w-4 text-sun-300" /> Free inspection
+                  <CheckIcon className="h-4 w-4 text-sun-300" /> Upfront pricing
                 </li>
                 <li className="flex items-center gap-1.5">
                   <CheckIcon className="h-4 w-4 text-sun-300" /> Free re-service

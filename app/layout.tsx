@@ -45,7 +45,6 @@ export const metadata: Metadata = {
     "rodent control cost mesa",
     "monthly pest control mesa az",
     "exterminator prices mesa az",
-    "free pest inspection mesa",
   ],
   applicationName: SITE.name,
   authors: [{ name: SITE.legalName, url: SITE.url }],
@@ -62,7 +61,7 @@ export const metadata: Metadata = {
     description: SITE.description,
     images: [
       {
-        url: "/og.svg",
+        url: "/og.jpg",
         width: 1200,
         height: 630,
         alt: "Pest Control Mesa AZ Prices — published price ranges for 250+ services",
@@ -73,7 +72,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: TITLE,
     description: SITE.description,
-    images: ["/og.svg"],
+    images: ["/og.jpg"],
   },
   robots: {
     index: true,

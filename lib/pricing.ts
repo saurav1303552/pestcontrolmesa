@@ -32,7 +32,7 @@ export const CATEGORIES: Category[] = [
   {
     slug: "inspections",
     name: "Inspections & Estimates",
-    blurb: "Free and paid pest inspections, identification and written estimates.",
+    blurb: "Pest inspections, identification and written estimates.",
     icon: "search",
   },
   {
@@ -187,7 +187,6 @@ export const PRICES: PriceRow[] = [
 
   // ---------- Inspections & estimates ----------
   { service: "Pest inspection", price: "$0–$150", category: "inspections", aliases: ["check for bugs", "assessment"] },
-  { service: "Free pest inspection", price: "$0", category: "inspections", aliases: ["no cost", "complimentary"] },
   { service: "Pest identification", price: "$0–$100", category: "inspections", aliases: ["identify bug", "what is this bug"] },
   { service: "Home pest inspection", price: "$0–$150", category: "inspections", aliases: ["house inspection"] },
   { service: "Pre-purchase pest inspection", price: "$75–$200", category: "inspections", aliases: ["buying a house", "before buying"] },
@@ -501,7 +500,6 @@ export const SYNONYMS: Record<string, string[]> = {
   snakes: ["snake"],
   monthly: ["monthly"],
   cheap: ["one-time"],
-  free: ["free"],
 };
 
 export const TOTAL_SERVICES = PRICES.length;

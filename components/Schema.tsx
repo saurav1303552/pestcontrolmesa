@@ -23,7 +23,7 @@ export default function Schema() {
     email: SITE.email,
     description: SITE.description,
     priceRange: "$$",
-    image: `${SITE.url}/og.svg`,
+    image: `${SITE.url}/og.jpg`,
     logo: `${SITE.url}/icon.svg`,
     address: {
       "@type": "PostalAddress",

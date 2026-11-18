@@ -192,7 +192,7 @@ export default function QuoteCta() {
               </button>
 
               <ul className="flex flex-wrap justify-center gap-x-4 gap-y-1.5 pt-1 text-[13px] text-brand-100/70">
-                {["Free inspection", "Written estimate", "No contract"].map((t) => (
+                {["Upfront pricing", "Written estimate", "No contract"].map((t) => (
                   <li key={t} className="flex items-center gap-1.5">
                     <CheckIcon className="h-3.5 w-3.5 text-sun-300" />
                     {t}

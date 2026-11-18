@@ -232,7 +232,7 @@ export default function Article() {
           </div>
 
           <SectionPhoto
-            photo={PHOTOS.exteriorTreatment}
+            photo={PHOTOS.priceCard}
             className="mt-9"
             sizes="(min-width: 1280px) 1152px, 100vw"
           />
@@ -409,7 +409,7 @@ export default function Article() {
           <InlineCta
             variant="dark"
             heading="Termites, bed bugs or scorpions? Get the specialty number first."
-            body="Specialty jobs are where quotes swing the most. We inspect free, show you what we found, and price only the treatment your home actually needs."
+            body="Specialty jobs are where quotes swing the most. We inspect the property, show you what we found, and price only the treatment your home actually needs."
           />
         </div>
       </section>

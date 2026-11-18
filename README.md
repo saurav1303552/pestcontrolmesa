@@ -58,12 +58,19 @@ file needs touching.
 
 ## Photography
 
-Three photo slots are declared in `lib/images.ts` and rendered by
-`components/SectionPhoto.tsx`. Each slot renders **nothing** while its `src` is
+Three slots are declared in `lib/images.ts` and rendered by
+`components/SectionPhoto.tsx`. A slot renders **nothing** while its `src` is
 `null`, so an unfilled slot leaves the layout untouched and a missing file can
-never ship as a broken image. Alt text is already written for partial-match
-keyword relevance. `docs/images.md` lists the filename, aspect ratio
-and subject matter each slot expects.
+never ship as a broken image.
+
+`priceCard` is filled: a branded price card built from the site's own palette
+and Poppins rather than stock photography, so the focus keyword is legible in
+the image itself. Its source is `scripts/price-card.html` — edit that and
+re-render rather than editing the binary; `scripts/README.md` has the commands.
+The same render produces `public/og.jpg`, the social preview image.
+
+The other two slots want real photographs. `docs/images.md` lists the filename,
+aspect ratio and subject matter each expects.
 
 ## Deploying to Cloudflare Pages
 

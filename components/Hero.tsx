@@ -69,7 +69,7 @@ export default function Hero() {
 
             <ul className="mt-7 grid gap-2.5 text-[15px] text-brand-100/85 sm:grid-cols-2">
               {[
-                "Free inspection & written estimate",
+                "Upfront pricing before you book",
                 "No long-term contract lock-in",
                 "Free re-service between visits",
                 "Scorpion, termite & rodent specialists",

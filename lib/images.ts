@@ -27,14 +27,18 @@ export type SitePhoto = {
 };
 
 export const PHOTOS: Record<string, SitePhoto> = {
-  /** Sits above the cost-driver cards. Wants: technician spraying a home's exterior. */
-  exteriorTreatment: {
-    src: null,
-    alt: "Pest control technician spraying an exterior perimeter barrier around a Mesa, AZ home",
+  /**
+   * Branded price card, built from the site's own type and palette rather
+   * than stock photography, so the focus keyword is legible in the image
+   * itself. Rendered from the banner source and committed as WebP.
+   */
+  priceCard: {
+    src: "/images/mesa-pest-control-prices.webp",
+    alt: "Pest Control Mesa AZ Prices — average costs for one-time treatment, monthly plans, scorpion control and termite treatment in Mesa, Arizona",
     width: 1600,
     height: 900,
     caption:
-      "Exterior perimeter work is the bulk of a recurring visit — and the main reason home size moves your price.",
+      "Typical Mesa price ranges at a glance. The full table below breaks all 253 services down by pest and frequency.",
   },
 
   /** Sits under the specialty-pest intro. Wants: bark scorpion or termite damage close-up. */
