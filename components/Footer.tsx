@@ -117,14 +117,26 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-3 border-t border-sand-300 pt-6 text-[13px] text-ink-400 sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            © {year} {SITE.legalName}. All rights reserved.
+        <div className="mt-12 border-t border-sand-300 pt-6">
+          <p className="text-[13px] leading-relaxed text-ink-500">
+            This site is a free service to assist homeowners in connecting with
+            local service contractors. All contractors are independent and this
+            site does not warrant or guarantee any work performed. It is the
+            responsibility of the homeowner to verify that the hired contractor
+            furnishes the necessary license and insurance required for the work
+            being performed. All persons depicted in a photo or video are actors
+            or models and not contractors listed on this site.
           </p>
-          <p>
-            Prices shown are typical Mesa, AZ ranges for planning and are not a
-            binding quote.
-          </p>
+
+          <div className="mt-6 flex flex-col gap-3 border-t border-sand-300 pt-6 text-[13px] text-ink-400 sm:flex-row sm:items-center sm:justify-between">
+            <p>
+              © {year} {SITE.legalName}. All rights reserved.
+            </p>
+            <p>
+              Prices shown are researched Mesa, AZ averages for planning and are
+              not a binding quote.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

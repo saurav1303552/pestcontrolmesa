@@ -1,6 +1,7 @@
 import { CATEGORIES, CATEGORY_NAMES, PRICES, type PriceRow } from "@/lib/pricing";
 import { SITE } from "@/lib/site";
 import { PhoneIcon, TagIcon, CheckIcon } from "./Icons";
+import PriceDisclaimer from "./PriceDisclaimer";
 
 /** Rows grouped into the order the categories are declared in. */
 const GROUPS: { slug: string; name: string; rows: PriceRow[] }[] = CATEGORIES.map(
@@ -57,6 +58,8 @@ export default function PriceTable() {
             picking up the phone.
           </p>
         </div>
+
+        <PriceDisclaimer className="mt-9" />
 
         {/* Jump to a category. The mobile and desktop layouts are separate
             DOM, so each gets its own anchor set — one shared id across both

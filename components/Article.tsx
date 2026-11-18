@@ -1,6 +1,7 @@
 import { SITE } from "@/lib/site";
 import { PHOTOS } from "@/lib/images";
 import SectionPhoto from "./SectionPhoto";
+import PriceDisclaimer from "./PriceDisclaimer";
 import {
   PhoneIcon,
   HouseIcon,
@@ -324,6 +325,8 @@ export default function Article() {
               upfront.
             </p>
           </div>
+
+          <PriceDisclaimer className="mt-9" />
 
           <InlineCta
             heading="Not sure which plan fits your house?"
@@ -672,6 +675,8 @@ export default function Article() {
               </li>
             ))}
           </ol>
+
+          <PriceDisclaimer className="mt-10" />
 
           <div className="prose-pcm mx-auto mt-10 text-center">
             <p className="text-lg!">

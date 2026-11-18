@@ -153,3 +153,12 @@ export function ArrowIcon(p: IconProps) {
     </svg>
   );
 }
+
+export function InfoIcon(p: IconProps) {
+  return (
+    <svg {...base} {...p}>
+      <circle cx="12" cy="12" r="8.75" />
+      <path d="M12 11.2v5M12 7.9h.01" />
+    </svg>
+  );
+}
